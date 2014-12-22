@@ -5,3 +5,5 @@
   when: sensu_server_ssl_enable
 
 - include: sensu-server.yml
+
+- meta: flush_handlers
