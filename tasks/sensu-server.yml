@@ -18,3 +18,19 @@
   with_items:
     - server
     - api
+
+- name: set which Ruby to use
+  lineinfile:
+    dest: '/etc/default/sensu'
+    regexp: '^EMBEDDED_RUBY='
+    line: 'EMBEDDED_RUBY={{ sensu_server_embedded_ruby }}'
+  notify:
+    - restart sensu server
+
+- name: set which user to use
+  lineinfile:
+    dest: '/etc/default/sensu'
+    regexp: '^USER='
+    line: 'USER={{ sensu_server_user }}'
+  notify:
+    - restart sensu server
