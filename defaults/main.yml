@@ -23,7 +23,7 @@ sensu_server_rabbitmq_hostname: "127.0.0.1"
 sensu_server_rabbitmq_user    : "sensu"
 sensu_server_rabbitmq_port    : 5672
 sensu_server_rabbitmq_password: "placeholder"
-sensu_server_rabbitmq_vhost:    "sensu"
+sensu_server_rabbitmq_vhost:    "/sensu"
 
 sensu_server_dashboard_host    : "127.0.0.1"
 sensu_server_dashboard_password: "placeholder"
