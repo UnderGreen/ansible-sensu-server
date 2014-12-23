@@ -34,3 +34,14 @@
     line: 'USER={{ sensu_server_user }}'
   notify:
     - restart sensu server
+
+- name: create /etc/sensu/config.json
+  template:
+    src: etc/sensu/config.json.j2
+    dest: /etc/sensu/config.json
+    owner: "{{ sensu_server_user }}"
+    group: "{{ sensu_server_group }}"
+    mode: 0640
+    backup: yes
+  notify:
+    - restart sensu server
