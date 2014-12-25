@@ -45,3 +45,13 @@
     backup: yes
   notify:
     - restart sensu server
+
+- name: copy config files
+  copy:
+    src: files/etc/sensu/conf.d/
+    dest: /etc/sensu/conf.d/
+    owner: "{{ sensu_server_user }}"
+    group: "{{ sensu_server_group }}"
+    mode: 0640
+  notify:
+    - restart sensu server
